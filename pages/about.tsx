@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export default function Home() {
 	return (
-		<div style={{ margin: 0, padding: 0 }}>
+		<div>
 			<Head>
 				<title>Mikey Software</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<h1>Home Page</h1>
-			<Link href="/about">
+			<h1>About</h1>
+			<Link href="/">
 				<a>Back to home</a>
 			</Link>
 		</div>
