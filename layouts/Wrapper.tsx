@@ -8,5 +8,8 @@ export default function Wrapper({ children }) {
 const WrapperContainer = styled.div`
 	margin: 0 auto;
 	max-width: 90rem;
-	padding: 0 1rem;
+	padding: 0 2rem;
+	@media only screen and (max-width: 768px) {
+		padding: 0 1rem;
+	}
 `;

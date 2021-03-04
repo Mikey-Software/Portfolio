@@ -11,13 +11,16 @@ export default function About() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Wrapper>
-				<h1>About</h1>
+				<h1>Projects</h1>
 				<Link href="/">
 					<a>Back to home</a>
 				</Link>
 				<br />
 				<br />
-				<p>Introduction, inspiration, goals. Spare time, hobbies, interests.</p>
+				<p>Community and open source projects. To show empathy, resolve and world class libraries for the greater good.</p>
+				<p>Idea 1: Fisherman (React Hooks for everyday projects/solutions).</p>
+				<p>Idea 2: Velvet (React Component Library based on framer motion and styled components).</p>
+				<p>Idea 3: No clue whatsoever</p>
 			</Wrapper>
 		</div>
 	);

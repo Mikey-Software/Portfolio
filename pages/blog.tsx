@@ -11,13 +11,16 @@ export default function About() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Wrapper>
-				<h1>About</h1>
+				<h1>Blog</h1>
 				<Link href="/">
 					<a>Back to home</a>
 				</Link>
 				<br />
 				<br />
-				<p>Introduction, inspiration, goals. Spare time, hobbies, interests.</p>
+				<p>
+					Share issues and solutions to my past experiences. My thoughts on certain new technologies. My preferences for stack or technologies in a
+					project.
+				</p>
 			</Wrapper>
 		</div>
 	);
