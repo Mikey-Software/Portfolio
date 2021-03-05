@@ -27,7 +27,7 @@ export default function index() {
 						<Divider />
 						<NavLinks>
 							{LINKS.map((link) => (
-								<Link href={`/${link}`}>
+								<Link key={link} href={`/${link}`}>
 									<a>{link}</a>
 								</Link>
 							))}
@@ -43,7 +43,7 @@ export default function index() {
 						<MobileMenu>
 							<Links>
 								{LINKS.map((link) => (
-									<Link href={`/${link}`}>
+									<Link key={link} href={`/${link}`}>
 										<a>{link}</a>
 									</Link>
 								))}
@@ -52,8 +52,31 @@ export default function index() {
 								</Link>
 							</Links>
 							<Information>
-								<SocialInformation>asdasdasd</SocialInformation>
-								<ContactInformation>asdasdasd</ContactInformation>
+								<SocialInformation>
+									<Link href={`/about`}>
+										<a>Twitter ↗</a>
+									</Link>
+									<Link href={`/about`}>
+										<a>Instagram ↗</a>
+									</Link>
+									<Link href={`/about`}>
+										<a>Youtube ↗</a>
+									</Link>
+									<Link href={`/about`}>
+										<a>Github ↗</a>
+									</Link>
+									<Link href={`/about`}>
+										<a>Medium ↗</a>
+									</Link>
+								</SocialInformation>
+								<ContactInformation>
+									<Link href={`/about`}>
+										<a>mikey.software</a>
+									</Link>
+									<Link href={`/about`}>
+										<a>(876) XXX-XXXX</a>
+									</Link>
+								</ContactInformation>
 							</Information>
 						</MobileMenu>
 					)}
@@ -65,7 +88,7 @@ export default function index() {
 
 // Styled Components
 const NavigationContainer = styled(motion.div)`
-	/* background-color: lightcoral; */
+	background: lightgrey;
 `;
 
 const NavigationBar = styled(motion.div)`
@@ -88,15 +111,16 @@ const NavStart = styled(motion.div)`
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	background: lightpink;
 `;
 
-const Logo = styled.div``;
+const Logo = styled.div`
+	cursor: pointer;
+`;
 
 const Divider = styled.div`
 	margin: 0 1rem;
 	width: 0.125rem;
-	height: 1.25rem;
+	height: 1.5rem;
 	background: grey;
 `;
 
@@ -106,7 +130,7 @@ const NavLinks = styled.div`
 	align-items: center;
 	background: lightgrey;
 	a {
-		margin-left: 1rem;
+		margin-left: 1.25rem;
 		text-transform: capitalize;
 	}
 	@media only screen and (max-width: 578px) {
@@ -146,10 +170,15 @@ const Links = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: 2rem 1rem;
-	padding-top: 4rem;
+	padding-top: 5rem;
 	font-size: 3rem;
+	font-weight: 500;
 	text-transform: capitalize;
 	background: grey;
+
+	a {
+		margin: 0.25rem 0;
+	}
 `;
 
 const Information = styled.div`
@@ -157,19 +186,26 @@ const Information = styled.div`
 	display: flex;
 	padding: 1rem 1rem;
 	background: lightgrey;
+	a {
+		margin: 0.25rem 0;
+	}
 `;
 
 const SocialInformation = styled.div`
 	flex: 1;
+	display: flex;
+	flex-direction: column;
 `;
 
 const ContactInformation = styled.div`
 	flex: 1;
+	display: flex;
+	flex-direction: column;
 `;
 
 // Animations
 const navigationVariants = {
-	initial: { opacity: 0, y: -32 },
-	animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+	initial: { y: -64 },
+	animate: { y: 0, transition: { duration: 0.5 } },
 	// exit: { opacity: 0, y: -10 },
 };

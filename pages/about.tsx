@@ -7,7 +7,7 @@ export default function About() {
 	return (
 		<div>
 			<Head>
-				<title>Mikey Software</title>
+				<title>About - Mikey Software</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Wrapper>

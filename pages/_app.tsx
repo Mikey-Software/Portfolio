@@ -10,7 +10,7 @@ function App({ Component, pageProps, router }: AppProps) {
 	return (
 		<PageWrapper>
 			<Layout>
-				<AnimatePresence exitBeforeEnter>
+				<AnimatePresence initial={false} exitBeforeEnter>
 					<PageContainer key={router.route} initial="initial" animate="animate" exit="exit" variants={pageVariants}>
 						<Component {...pageProps} />
 					</PageContainer>
