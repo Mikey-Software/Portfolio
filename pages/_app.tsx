@@ -1,16 +1,15 @@
 import { Fragment } from "react";
-import { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import "../styles/globals.css";
 
-function App({ Component, pageProps, router }: AppProps) {
+function App({ Component, pageProps, router }) {
 	const Layout = Component?.Layout ? Component?.Layout : Fragment;
 
 	return (
 		<PageWrapper>
 			<Layout>
-				<AnimatePresence initial={false} exitBeforeEnter>
+				<AnimatePresence exitBeforeEnter>
 					<PageContainer key={router.route} initial="initial" animate="animate" exit="exit" variants={pageVariants}>
 						<Component {...pageProps} />
 					</PageContainer>

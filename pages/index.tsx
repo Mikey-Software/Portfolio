@@ -1,7 +1,13 @@
 import Head from "next/head";
-import Link from "next/link";
 import DefaultLayout from "@layouts/DefaultLayout";
 import Wrapper from "@layouts/Wrapper";
+import styled, { css } from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+
+// Page Components
+import HeroSection from "@components/HomePage/HeroSection";
+import ExperienceSection from "@components/HomePage/ExperienceSection";
+
 export default function Home() {
 	return (
 		<>
@@ -9,12 +15,8 @@ export default function Home() {
 				<title>Mikey Software</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Wrapper>
-				<h1>Home Page</h1>
-				<Link href="/about">
-					<a>Back to home</a>
-				</Link>
-			</Wrapper>
+			<HeroSection />
+			<ExperienceSection />
 		</>
 	);
 }
