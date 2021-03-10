@@ -1,8 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
 // Typography
-export const Headline = styled.h1`
+
+export const Headline = ({ size = 1, children }) => <HeadlineContainer size={size}>{children}</HeadlineContainer>;
+
+const HeadlineContainer = styled.h1`
 	margin: 0.75rem 0;
 	font-size: 4rem;
 	font-weight: 900;
@@ -19,6 +22,38 @@ export const Headline = styled.h1`
 	@media only screen and (max-width: 578px) {
 		font-size: 2.5rem;
 	}
+
+	${({ size }) =>
+		size === 2 &&
+		css`
+			font-size: 2.5rem;
+
+			@media only screen and (max-width: 1024px) {
+				font-size: 2rem;
+			}
+
+			@media only screen and (max-width: 768px) {
+				font-size: 1.5rem;
+			}
+
+			@media only screen and (max-width: 578px) {
+				font-size: 1rem;
+			}
+		`}
+
+	${({ size }) =>
+		size === 3 &&
+		css`
+			font-size: 2rem;
+
+			@media only screen and (max-width: 1024px) {
+				font-size: 1.5rem;
+			}
+
+			@media only screen and (max-width: 768px) {
+				font-size: 1rem;
+			}
+		`}
 `;
 
 // Dividers
