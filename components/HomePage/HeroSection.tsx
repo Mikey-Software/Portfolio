@@ -6,7 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Wrapper from "@layouts/Wrapper";
 import { Headline } from "../../styles/globals";
 import Button from "@components/Button";
+import HoverText from "@components/HoverText";
+
 import BrowserCarousel from "@components/BrowserCarousel";
+import CodeEditor from "@components/CodeEditor";
 
 export default function HeroSection() {
     return (
@@ -14,19 +17,26 @@ export default function HeroSection() {
             <Wrapper>
                 <HeroContainer>
                     <HeroHeadline>
-                        <p>Michael Cowan aka "Mikey Software"</p>
-                        <Headline>Building digital products, services and solutions.</Headline>
+                        <HeroGreeting>
+                            <HoverText hoverText="What's up?">Wah gwaan?</HoverText> I'm Mikey (Software)
+                        </HeroGreeting>
+                        <Headline>Fullstack developer building software nobody asked for!</Headline>
                         <HeroCTA>
-                            <Link href="/about">
+                            <Link href="/work">
                                 <a>
                                     <Button>View Portfolio</Button>
                                 </a>
                             </Link>
-                            <Button>Live Projects</Button>
+                            <Link href="/projects">
+                                <a>
+                                    <Button>Things I Made ↗</Button>
+                                </a>
+                            </Link>
                         </HeroCTA>
-                        <p>*Frontend, Backend, Mobile &amp; DevOps</p>
                     </HeroHeadline>
-                    <HeroImage>{/* <BrowserCarousel /> */}</HeroImage>
+                    <HeroImage>
+                        <CodeEditor />
+                    </HeroImage>
                 </HeroContainer>
             </Wrapper>
         </Hero>
@@ -34,14 +44,16 @@ export default function HeroSection() {
 }
 
 const Hero = styled.div`
+    overflow: hidden;
     @media only screen and (max-width: 768px) {
-        height: calc(100vh - 3.875rem); // Height of Navigation Bar
+        /* height: calc(100vh - 3.875rem); // Height of Navigation Bar */
     }
 `;
 
 const HeroContainer = styled.div`
     display: flex;
-    padding: 4rem 0rem;
+    padding: 2rem 0rem;
+    /* background: red; */
     @media only screen and (max-width: 1024px) {
         flex-direction: column;
     }
@@ -50,20 +62,46 @@ const HeroContainer = styled.div`
     }
 `;
 
+const HeroGreeting = styled.p`
+    /* flex: 1; */
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    /* display: flex;
+    align-items: center;
+    div {
+        margin-left: 0.5rem;
+    } */
+    /* margin: 4rem 0; */
+`;
+
 const HeroHeadline = styled.div`
-    flex: 1;
+    flex: 3;
+    /* padding-bottom: 4rem; */
     /* margin: 4rem 0; */
 `;
 
 const HeroImage = styled.div`
-    flex: 1;
+    flex: 2;
+    margin-bottom: 2rem;
     position: relative;
+    margin-left: 2rem;
+
+    @media only screen and (max-width: 1280px) {
+        display: grid;
+        place-items: center;
+    }
+
+    @media only screen and (max-width: 768px) {
+        margin: 0;
+    }
+    /* display: grid; */
+    /* place-items: center; */
+    /* background: red; */
 `;
 
 const HeroCTA = styled.div`
     /* background: lightsteelblue; */
-    margin: 1rem 0;
-
+    margin: 2.5rem 0;
     button {
         margin-right: 1.5rem;
     }

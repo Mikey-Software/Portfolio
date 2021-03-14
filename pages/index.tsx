@@ -9,16 +9,16 @@ import HeroSection from "@components/HomePage/HeroSection";
 import ExperienceSection from "@components/HomePage/ExperienceSection";
 
 export default function Home() {
-	return (
-		<>
-			<Head>
-				<title>Mikey Software</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<HeroSection />
-			<ExperienceSection />
-		</>
-	);
+    return (
+        <>
+            <Head>
+                <title>Mikey Software</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <HeroSection />
+            <ExperienceSection />
+        </>
+    );
 }
 
 Home.Layout = DefaultLayout;
