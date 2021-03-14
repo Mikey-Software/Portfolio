@@ -18,7 +18,8 @@ export default function HeroSection() {
                 <HeroContainer>
                     <HeroHeadline>
                         <HeroGreeting>
-                            <HoverText hoverText="What's up?">Wah gwaan?</HoverText> I'm Mikey (Software)
+                            {/* <HoverText hoverText="What's up?">Wah gwaan?</HoverText> I'm Mikey (Software) */}
+                            <HoverText hoverText="Wah gwaan?">What's up?</HoverText> {"  I'm Mikey (Software)"}
                         </HeroGreeting>
                         <Headline>Fullstack developer building software nobody asked for!</Headline>
                         <HeroCTA>
@@ -66,6 +67,7 @@ const HeroGreeting = styled.p`
     /* flex: 1; */
     font-size: 1.5rem;
     margin: 2rem 0;
+    white-space: nowrap;
     /* display: flex;
     align-items: center;
     div {
@@ -101,8 +103,16 @@ const HeroImage = styled.div`
 
 const HeroCTA = styled.div`
     /* background: lightsteelblue; */
+    display: flex;
+    flex-wrap: nowrap;
     margin: 2.5rem 0;
     button {
         margin-right: 1.5rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+        button {
+            margin-right: 1.25rem;
+        }
     }
 `;

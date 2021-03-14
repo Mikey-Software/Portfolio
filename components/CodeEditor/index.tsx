@@ -96,7 +96,7 @@ export default function index() {
             </Line>
             <Line>
                 <LineNumber>12</LineNumber>
-                <LineText>{"},"}</LineText>
+                <LineText>{"};"}</LineText>
             </Line>
             <Line>
                 <LineNumber></LineNumber>
@@ -110,7 +110,6 @@ const EditorContainer = styled(motion.div)`
     background: lightgray;
     min-width: 36rem;
     width: max-content;
-    /* width: 100%; */
     height: max-content;
     border-radius: 0.5rem;
     margin: auto;
@@ -123,6 +122,8 @@ const EditorContainer = styled(motion.div)`
 
     @media only screen and (max-width: 576px) {
         width: 100%;
+        min-width: unset;
+        /* min-width: 23rem; */
     }
 `;
 
@@ -132,6 +133,9 @@ const Line = styled.div`
     font-size: 1rem;
     overflow: hidden;
     align-items: center;
+    @media only screen and (max-width: 576px) {
+        height: 1.5rem;
+    }
 `;
 
 const LineNumber = styled.div`
@@ -140,11 +144,16 @@ const LineNumber = styled.div`
     height: 100%;
     color: lightgray;
     background: black;
-    padding: 0 0.75rem;
+    padding: 0 0.5rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     font-size: 1rem;
+
+    @media only screen and (max-width: 576px) {
+        width: 2rem;
+        font-size: 0.65rem;
+    }
 `;
 
 const LineText = styled.div`
@@ -156,8 +165,15 @@ const LineText = styled.div`
     font-size: 1.125rem;
     padding-left: 1.25rem;
     overflow: hidden;
+    @media only screen and (max-width: 576px) {
+        font-size: 0.75rem;
+        padding-left: 0.875rem;
+    }
 `;
 
 const TabSpace = styled.span`
-    width: 1.75rem;
+    min-width: 1.75rem;
+    @media only screen and (max-width: 576px) {
+        min-width: 1.125rem;
+    }
 `;

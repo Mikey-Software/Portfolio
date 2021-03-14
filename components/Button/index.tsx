@@ -26,4 +26,9 @@ const ButtonContainer = styled(motion.button)`
             background: none;
             text-decoration: underline;
         `}
+
+    @media only screen and (max-width: 576px) {
+        font-size: 1rem;
+        padding: 0.65rem 1.25rem;
+    }
 `;

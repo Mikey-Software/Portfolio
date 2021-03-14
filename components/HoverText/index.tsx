@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function index({ children, hoverText = "", rotation = 4 }) {
     return (
         <TextContainer>
-            <DisplayText initial={{ opacity: 1 }} animate={{ opacity: 0.25, textDecoration: "line-through", transition: { delay: 0.35 } }}>
+            <DisplayText initial={{ opacity: 1 }} animate={{ opacity: 0.25, textDecoration: "line-through", transition: { delay: 0.125 } }}>
                 {children}
             </DisplayText>
             <HoverText initial={{ opacity: 0 }} animate={{ opacity: 1, y: -32, rotate: rotation, transition: { delay: 0.25 } }}>
